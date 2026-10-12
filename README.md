@@ -21,7 +21,8 @@
 
 Что сделать
 
-**Задание 1 Подготовить проект**
-Создайте папку:
-mkdir -p ~/cpp-course/lesson-1/homework
+**Задание 1 Подготовить проект**    
+Создайте папку:    
+mkdir -p ~/cpp-course/lesson-1/homework    
 cd ~/cpp-course/lesson-1/homework
+
