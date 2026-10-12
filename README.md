@@ -24,27 +24,24 @@
 **Задание 1 Подготовить проект**    
 Создайте папку:    
 *mkdir -p ~/cpp-course/lesson-1/homework    
-cd ~/cpp-course/lesson-1/homework*
-
-Создайте файл main.cpp.
-Минимальные требования:
+cd ~/cpp-course/lesson-1/homework*    
+Создайте файл main.cpp.    
+**Минимальные требования:**
 - подключены <iostream> и <string>;
 - нет using namespace std;;
-- правило минимального остатка записано как const int
-minimumReserve{25};;
+- правило минимального остатка записано как const int minimumReserve{25};;
 - все локальные числа получают начальное значение;
 - есть минимум три функции, включая main.
-Задание 2. Реализовать функции
-Функция расчета остатка:
-int calculateRemainingBattery(int battery, int
-plannedConsumption);
-Она возвращает выражение:
-battery - plannedConsumption
-Функция проверки готовности:
-bool isReadyForMission(
+
+**Задание 2. Реализовать функции**    
+**Функция расчета остатка:**    
+*int calculateRemainingBattery(int battery, int plannedConsumption);*    
+**Она возвращает выражение:**    
+*battery - plannedConsumption*    
+**Функция проверки готовности:**    
+*bool isReadyForMission(
 int remainingBattery,
 int successfulChecks,
 int minimumReserve
-);
-Она возвращает true, только если остаток не меньше минимума и
-число успешных проверок равно 3
+);*    
+Она возвращает true, только если остаток не меньше минимума и число успешных проверок равно 3    
