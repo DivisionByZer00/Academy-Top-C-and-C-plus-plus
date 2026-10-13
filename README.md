@@ -41,8 +41,8 @@ cd ~/cpp-course/lesson-1/homework*
 **Функция проверки готовности:**    
 *bool isReadyForMission(    
 int remainingBattery,    
-&nbsp; int successfulChecks,    
-int minimumReserve    
+    int successfulChecks,    
+    int minimumReserve    
 );*    
 Она возвращает true, только если остаток не меньше минимума и число успешных проверок равно 3    
 **Функция вывода статуса:**    
