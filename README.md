@@ -42,7 +42,7 @@ cd ~/cpp-course/lesson-1/homework*
 *bool isReadyForMission(    
 int remainingBattery,    
 >int successfulChecks,    
-?int minimumReserve    
+>int minimumReserve    
 );*    
 Она возвращает true, только если остаток не меньше минимума и число успешных проверок равно 3    
 **Функция вывода статуса:**    
