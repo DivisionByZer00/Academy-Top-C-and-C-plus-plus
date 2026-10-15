@@ -246,7 +246,7 @@ cd ~/cpp-course/lesson-3/homework*
 - иначе напечатать Telemetry: <заряд>%.
 
 **Выбор датчика:**  
-*int* selectSensor(int command, int& firstBattery, int& secondBattery);*
+*int* selectSensor(int command, int& firstBattery, int& secondBattery);*    
 **Правила возврата:**
 - 1 вернуть адрес первого заряда;
 - 2 вернуть адрес второго заряда;
