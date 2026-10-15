@@ -125,5 +125,23 @@ mission_console*
 **Задание 1. Подготовить проект**    
 **Создайте папку:**    
 *mkdir -p ~/cpp-course/lesson-2/homework    
-cd ~/cpp-course/lesson-2/homework*
+cd ~/cpp-course/lesson-2/homework*    
+Создайте файл main.cpp.
+- подключены <iostream> и <string>;
+- нет using namespace std;
+- бонус записан как const int bonus{20};
+- все локальные числа получают начальное значение;
+- есть минимум четыре функции, включая main.
 
+**Задание 2. Реализовать функции**    
+**Функция копии:**    
+*int applyBonusCopy(int battery, int bonus);*    
+Она возвращает battery + bonus и не меняет объект вызывающей стороны, потому что параметр приходит по значению.    
+**Функция изменения:**    
+*void applyBonusReference(int& battery, int bonus);*    
+**Она выполняет:**    
+*battery += bonus;*    
+**Функция печати одного устройства:**    
+*void printDevice(const std::string& name, const int& battery);*    
+**Она выводит:**    
+*<имя>: <заряд>%*    
