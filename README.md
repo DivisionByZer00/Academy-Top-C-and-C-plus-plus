@@ -393,7 +393,7 @@ reserve_console
 *mkdir -p ~/cpp-course/lesson-5/homework    
 cd ~/cpp-course/lesson-5/homework*    
 **Минимальные требования:**
-- подключены < iostream > и <memory>;
+- подключены <iostream> и <memory>;
 - нет using namespace std;;
 - нет ручного delete;
 - есть функция печати через const std::unique_ptr<int>&.
