@@ -462,7 +462,7 @@ No reserve*
 
 **Правила:**
 1. Если флаг равен 0, резерв не создавать. Напечатать заряд и строку No reserve.
-2. Если флаг равен 1, создать std::unique_ptr<int> со значением 20 через make_unique.
+2. Если флаг равен 1, создать std::unique_ptr< int > со значением 20 через make_unique.
 3. Если после создания сумма заряд + резерв больше 100, напечатать Input error и завершиться кодом 1. Обертка должна уничтожиться сама.
 4. Если все корректно, передать владение во вторую переменную через std::move, напечатать итог и убедиться, что исходная обертка пустая.
 5. Любой заряд вне 0-100 или флаг не 0/1 дают Input error и код 1.
@@ -473,21 +473,21 @@ No reserve*
 *mkdir -p ~/cpp-course/lesson-6/homework    
 cd ~/cpp-course/lesson-6/homework**    
 **Минимальные требования:**
-- подключены <array>, <iostream>, <string>, <vector>;
+- подключены < array >, < iostream >, < string >, < vector >;
 - нет using namespace std;;
 - нет new и delete;
-- батареи хранятся в std::array<int, 3>;
-- показания хранятся в std::vector<int>.
+- батареи хранятся в std::array< int, 3 >;
+- показания хранятся в std::vector< int >.
 
 **Задание 2. Реализовать функции**    
 **Печать слотов:**    
-*void printBatteries(const std::array<int, 3>& batteries);*
+*void printBatteries(const std::array< int, 3 >& batteries);*
 **Она печатает три строки вида:**    
-*Slot 0: <число>%    
-Slot 1: <число>%    
-Slot 2: <число>%*    
+*Slot 0: < число >%    
+Slot 1: < число >%    
+Slot 2: < число >%*    
 **Сумма показаний:**
-*int sumReadings(const std::vector<int>& readings);*    
+*int sumReadings(const std::vector< int >& readings);*    
 Она возвращает сумму всех элементов. Для пустого списка возвращает 0, хотя в основном сценарии пустой список уже отсечен проверкой ввода.    
 Новым является только передача контейнера через const ссылку: функция читает данные без копии всего списка.
 
