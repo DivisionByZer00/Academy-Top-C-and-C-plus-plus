@@ -27,7 +27,7 @@
 cd ~/cpp-course/lesson-1/homework*    
 Создайте файл main.cpp.    
 **Минимальные требования:**
-- подключены <iostream> и <string>;
+- подключены < iostream > и < string >;
 - нет using namespace std;;
 - правило минимального остатка записано как const int minimumReserve{25};;
 - все локальные числа получают начальное значение;
@@ -68,9 +68,9 @@ int remainingBattery,
 
 **Задание 4. Вывести отчет**    
 **Для корректных данных выведите:**    
-*Device: <имя>    
-Remaining battery: <остаток>%    
-Checks passed: <число>/3    
+*Device: < имя >    
+Remaining battery: < остаток >%    
+Checks passed: < число >/3    
 Status: ready*    
 или:    
 *Status: not ready*    
@@ -127,7 +127,7 @@ mission_console*
 *mkdir -p ~/cpp-course/lesson-2/homework    
 cd ~/cpp-course/lesson-2/homework*    
 Создайте файл main.cpp.
-- подключены <iostream> и <string>;
+- подключены < iostream > и < string >;
 - нет using namespace std;
 - бонус записан как const int bonus{20};
 - все локальные числа получают начальное значение;
@@ -144,7 +144,7 @@ cd ~/cpp-course/lesson-2/homework*
 **Функция печати одного устройства:**    
 *void printDevice(const std::string& name, const int& battery);*    
 **Она выводит:**    
-*<имя>: <заряд>%*    
+*< имя >: < заряд >%*    
 **Функция печати пары:**    
 *void printReport(    
 &nbsp;&nbsp;&nbsp;&nbsp;const std::string& firstName,    
@@ -232,7 +232,7 @@ Beta: 50%*
 *mkdir -p ~/cpp-course/lesson-3/homework    
 cd ~/cpp-course/lesson-3/homework*    
 **Минимальные требования:**
-- подключен <iostream>;
+- подключен < iostream >;
 - нет using namespace std;;
 - указатель всегда инициализирован;
 - есть функция печати через const int*;
@@ -243,7 +243,7 @@ cd ~/cpp-course/lesson-3/homework*
 *ivoid printThroughSensor(const int* sensor);*    
 **Правила вывода:**
 - при nullptr напечатать Sensor offline;
-- иначе напечатать Telemetry: <заряд>%.
+- иначе напечатать Telemetry: < заряд >%.
 
 **Выбор датчика:**  
 *int* selectSensor(int command, int& firstBattery, int& secondBattery);*    
@@ -319,7 +319,7 @@ sensor_console
 *mkdir -p ~/cpp-course/lesson-4/homework    
 cd ~/cpp-course/lesson-4/homework*    
 **Минимальные требования:**
-- подключен <iostream>;
+- подключен < iostream >;
 - нет using namespace std;;
 - указатель инициализирован nullptr;
 - delete вызывается только если указатель не nullptr;
@@ -383,7 +383,7 @@ reserve_console
 
 **Правила:**
 1. Если флаг равен 0, резерв не создавать. Напечатать заряд и строку No reserve.
-2. Если флаг равен 1, создать std::unique_ptr<int> со значением 20 через make_unique.
+2. Если флаг равен 1, создать std::unique_ptr< int > со значением 20 через make_unique.
 3. Если после создания сумма заряд + резерв больше 100, напечатать Input error и завершиться кодом 1. Обертка должна уничтожиться сама.
 4. Если все корректно, передать владение во вторую переменную через std::move, напечатать итог и убедиться, что исходная обертка пустая.
 5. Любой заряд вне 0-100 или флаг не 0/1 дают Input error и код 1.
@@ -393,21 +393,21 @@ reserve_console
 *mkdir -p ~/cpp-course/lesson-5/homework    
 cd ~/cpp-course/lesson-5/homework*    
 **Минимальные требования:**
-- подключены <iostream> и <memory>;
+- подключены < iostream > и < memory >;
 - нет using namespace std;;
 - нет ручного delete;
-- есть функция печати через const std::unique_ptr<int>&.
+- есть функция печати через const std::unique_ptr< int >&.
 
 **Задание 2. Реализовать функции**    
 **Печать:**    
-*void printReserve(const std::unique_ptr<int>& reserve);*    
+*void printReserve(const std::unique_ptr< int >& reserve);*    
 **Правила:**
 - пустая обертка печатает No reserve;
-- иначе печатает Reserve: <число>%.
+- иначе печатает Reserve: < число >%.
 
 **Создание:**    
-*std::unique_ptr<int> makeReserve();*      
-Она возвращает std::make_unique<int>(20).
+*std::unique_ptr< int > makeReserve();*      
+Она возвращает std::make_unique< int >(20).
 
 **Задание 3. Проверить входные данные**    
 **Программа читает:**
@@ -445,7 +445,7 @@ No reserve*
 
 **Задание 7. Диагностический эксперимент**    
 **Временно замените создание на:**    
-*std::unique_ptr<int> reserve{new int{20}};*    
+*std::unique_ptr< int > reserve{new int{20}};*    
 Соберите программу. Затем верните make_unique и в отчете объясните, чем предпочтительнее фабричная функция курса. Ручной delete при этом не добавляйте.
 
 
