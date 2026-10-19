@@ -566,7 +566,7 @@ fleet_console
 |:--|:--------|:--------|:------|:---------|
 | 1 | Rover 80 | Scout 45 | 5 | Scout 50, флот из 2 |
 | 2 | Alpha 10 | Beta 90 | 5 | Beta 95 |
-| 3 | Tank 70 | Scout 95 | 5 | Input error |
+| 3 | Tank 70 | Scout 95 | 10 | Input error |
 | 4 | пустое имя, 70 | Scout 20 | 0 | Input error |
 
 **Задание 5. Диагностический эксперимент**    
