@@ -526,3 +526,48 @@ journal_console
 
 **Задание 7. Диагностический эксперимент**    
 Временно замените один доступ batteries.at(i) на batteries[i] и в отчете объясните, чем at безопаснее для учебного кода. Затем верните at.
+
+## Homework 07
+
+### Тема: "Struct. Консоль флота устройств"
+
+**Задача**
+**Программа читает:**
+- имя и заряд первого устройства;
+- имя и заряд второго устройства;
+- бонус для второго устройства от 0 до 20.
+
+**Правила:**
+1. Имена не пустые.
+2. Заряды до бонуса в диапазоне 0..100.
+3. Бонус в диапазоне 0..20.
+4. После бонуса второй заряд тоже обязан остаться в 0..100, иначе Input error и код 1.
+5. Данные хранятся в struct Device, флот в std::vector< Device > .
+6. Нет using namespace std;.
+
+**Что сделать**
+
+**Задание 1. Подготовить проект**
+*mkdir -p ~/cpp-course/lesson-7/homework  
+cd ~/cpp-course/lesson-7/homework*
+
+**Задание 2. Реализовать функции**
+- void printDevice(const Device& device);
+- void chargeDevice(Device& device, int bonus);
+- bool isBatteryValid(const Device& device);
+
+**Задание 3. Собрать**
+*g++ -std=c++17 -Wall -Wextra -Wpedantic main.cpp -o    
+fleet_console    
+./fleet_console*
+
+**Задание 4. Провести четыре проверки**
+| N | Device1 | Device2 | Bonus | Ожидание |
+|:--|:--------|:--------|:------|:---------|
+| 1 | Rover 80 | Scout 45 | 5 | Scout 50, флот из 2 |
+| 2 | Alpha 10 | Beta 90 | 5 | Beta 95 |
+| 3 | Tank 70 | Scout 95 | 5 | Input error |
+| 4 | пустое имя, 70 | Scout 20 | 0 | Input error |
+
+**Задание 5. Диагностический эксперимент**    
+Временно уберите & у chargeDevice и покажите, что бонус не сохранится. Верните ссылку.
