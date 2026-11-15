@@ -1,0 +1,130 @@
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <vector>
+
+struct Device
+{
+    std::string name;
+    int battery;
+};
+
+void printDevice(const Device& device)
+{
+    std::cout << device.name << ": " << device.battery << "%\n";
+}
+
+int main()
+{
+
+    {
+        std::ofstream log{ "fleet.log", std::ios::app };
+        if (log)
+        {
+            log << "start\n";
+        }
+    }
+
+    Device first{};
+    Device second{};
+
+    std::cout << "First name: ";
+    std::getline(std::cin, first.name);
+
+    std::cout << "First battery: ";
+    std::cin >> first.battery;
+    std::cin.ignore();
+
+    std::cout << "Second name: ";
+    std::getline(std::cin, second.name);
+
+    std::cout << "Second battery: ";
+    std::cin >> second.battery;
+
+
+    if (first.name.empty() || second.name.empty()) {
+        std::ofstream log{ "fleet.log", std::ios::app };
+        log << "error: invalid input\n";
+        std::cout << "Input error\n";
+        return 1;
+    }
+
+    if (first.battery < 0 || first.battery > 100) {
+        std::ofstream log{ "fleet.log", std::ios::app };
+        log << "error: invalid input\n";
+        std::cout << "Input error\n";
+        return 1;
+    }
+
+    if (second.battery < 0 || second.battery > 100) {
+        std::ofstream log{ "fleet.log", std::ios::app };
+        log << "error: invalid input\n";
+        std::cout << "Input error\n";
+        return 1;
+    }
+
+
+    {
+        std::ofstream out{ "fleet.txt" };
+        if (!out) 
+        {
+            std::ofstream log{ "fleet.log", std::ios::app };
+            log << "error: open fleet.txt failed\n";
+            std::cout << "Input error\n";
+            return 1;
+        }
+        else {
+            out << first.name << " " << first.battery << "\n";
+            out << second.name << " " << second.battery << "\n";
+        }
+    }
+
+
+    {
+        std::ofstream csv{ "fleet.csv" };
+        if (!csv)
+        {
+            std::ofstream log{ "fleet.log", std::ios::app };
+            log << "error: open fleet.csv failed\n";
+            std::cout << "Input error\n";
+            return 1;
+        }
+        else {
+            csv << "name,battery\n";
+            csv << first.name << "," << first.battery << "\n";
+            csv << second.name << "," << second.battery << "\n";
+        }
+    }
+
+
+    {
+        std::ofstream log{ "fleet.log", std::ios::app };
+
+        log << "write fleet success\n";
+        
+        
+    }
+
+
+    std::ifstream in{ "fleet.txt" };
+    std::vector<Device> fleet;
+    Device d{};
+    if (!in)
+    {
+        std::ofstream log{ "fleet.log", std::ios::app };
+        log << "error: open fleet.txt failed\n";
+        std::cout << "Input error\n";
+        return 1;
+    }
+    while (in >> d.name >> d.battery)
+    {
+        fleet.push_back(d);
+    }
+
+    for (const Device& device : fleet)
+    {
+        printDevice(device);
+    }
+
+    return 0;
+}
